@@ -23,27 +23,48 @@ const pokemonIcon = L.icon({
 function Map() {
   const [position, setPosition] = useState([-6.466185, -36.937022]); 
   const [visiblePokemons, setVisiblePokemons] = useState([]); 
+  const [userPokemons, setUserPokemons] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
     api
-      .get(`/pokemons/nearby/${position[0]}/${position[1]}`)
-      .then((response) => {
-        setVisiblePokemons(response.data);
-      })
-      .catch((err) => console.error("Erro ao carregar pokémons próximos: " + err));
-  }, [position]);
+        .get(`/pokemons/nearby/${position[0]}/${position[1]}`)
+        .then((response) => {
+            const pokemons = response.data;
+            const capturedPokemons = pokemons.filter((pokemon) => 
+                !pokemon.captured || !userPokemons.includes(pokemon.id)
+            );
+            setVisiblePokemons(capturedPokemons);
+        })
+        .catch((err) => console.error("Erro ao carregar pokémons próximos: " + err));
+}, [position, userPokemons]);
 
-  const capturePokemon = (pokemonId) => {
-    api
-      .post(`/pokemons/capture/${pokemonId}`)
-      .then((response) => {
-        alert(response.data.message);
-        setVisiblePokemons((prevPokemons) =>
-          prevPokemons.filter((pokemon) => pokemon.id !== pokemonId)
-        );
-      })
-      .catch((err) => console.error("Erro ao capturar o Pokémon: " + err));
-  };
+const capturePokemon = (pokemonId) => {
+  const token = localStorage.getItem("token");
+  const userId = 2
+  
+  if (!token || !userId) {
+    alert("Usuário não autenticado ou ID do usuário não encontrado.");
+    return;
+  }
+
+  api
+    .post(`/pokemons/capture/${pokemonId}`, { user_id: userId }, {
+      headers: {
+        Authorization: `Bearer ${token}`,  // Passa o token no cabeçalho
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+      alert(response.data.message);
+      setVisiblePokemons((prevPokemons) =>
+        prevPokemons.filter((pokemon) => pokemon.id !== pokemonId)
+      );
+    })
+    .catch((err) => {
+      console.error("Erro ao capturar o Pokémon: " + (err.response ? err.response.data.message : err.message));
+      alert("Erro ao capturar o Pokémon: " + (err.response ? err.response.data.message : err.message));
+    });
+};
 
   return (
     <div>

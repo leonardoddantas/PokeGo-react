@@ -1,0 +1,81 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 4rem;
+    background: linear-gradient(to bottom, #04AA6D, #036651);
+    color: white;
+}
+
+.profile-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 40vw;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+
+label {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #036651;
+    color: white;
+    font-size: 1rem;
+}
+
+.profile-form input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-form input:focus {
+    outline: none;
+    box-shadow: 0 0 4px 2px rgba(0, 211, 134, 0.8);
+}
+
+.profile-form button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 1rem;
+}
+
+.profile-form button[type="submit"] {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.profile-form button[type="submit"]:hover {
+    background-color: #036651;
+}
+
+.logout-button {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: #cc0000;
+}
