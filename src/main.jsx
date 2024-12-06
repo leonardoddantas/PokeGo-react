@@ -3,17 +3,19 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
-import Map from './containers/map/index.jsx';  // Sua página de Map
-import Header from './containers/header/index.jsx';
+import Map from './containers/map/index.jsx'; 
+import Home from "./containers/home/index.jsx";
 import Login from './containers/login/index.jsx';
 import Register from './containers/register/index.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import Profile from "./containers/profile/index.jsx";
+import Pokedex from "./containers/pokedex/index.jsx";
+import PokedexCapturado from "./containers/pokedexCapturado/index.jsx";
 
 const router = [
   {
     path: "/",
-    element: <Header />,  // O Header será exibido em todas as páginas
+    element: <Home />,
   },
   {
     path: "/jogar",
@@ -34,6 +36,14 @@ const router = [
   {
     path: "/profile",
     element: < Profile/>,
+  },
+  {
+    path: "/pokedex",
+    element: < Pokedex/>,
+  },
+  {
+    path: "/pokedexcapturado",
+    element: < PokedexCapturado/>,
   },
 ];
 

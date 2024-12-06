@@ -1,11 +1,12 @@
+
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function Header() {
-  const userName = localStorage.getItem("user_name");
-
-  return (
-    <header>
+function Home() {
+    const userName = localStorage.getItem("user_name");
+    return (
+        <>
+           <header>
       <div className="info">
         <h2>POKEGO</h2>
         <h1>PIKACHU</h1>
@@ -30,7 +31,15 @@ function Header() {
         </nav>
       </div>
     </header>
-  );
+
+           <main>
+                <section className="cirol">
+                    <h1>Cirol</h1>
+                    <p>Cirol é um Pokémon do tipo Terra, conhecido por sua habilidade única de Lança-Esporos, que usa de forma estratégica para confundir adversários. Apesar de sua timidez, é um verdadeiro estrategista em batalhas, surpreendendo com táticas inteligentes e precisas.</p>
+                </section>
+           </main>
+        </>
+    );
 }
 
-export default Header;
+export default Home;

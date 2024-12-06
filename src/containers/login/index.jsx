@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom"; // Adicione o Link aqui
+import { useNavigate, Link } from "react-router-dom"; 
 import "./style.css";
 import api from "../../services/api";
 import bulbasaur from "/images/bulbasaur.png";
