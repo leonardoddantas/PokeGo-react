@@ -19,7 +19,7 @@ function Home() {
       <div className="menu">
         <nav>
           <ul>
-            <li><Link to="/login">Home</Link></li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/pokedex">Pokémons</Link></li>
             <li><Link to="/jogar">Jogar</Link></li>
             {userName ? (
@@ -33,11 +33,33 @@ function Home() {
     </header>
 
            <main>
+                <section className="sobre">
+                  <div>
+                     <h1>O que é o PokeGo?</h1>
+                      <p>
+                          PokeGo é um jogo interativo onde a sala de aula se transforma em uma aventura Pokémon! 
+                          Aqui, os professores não são mais apenas instrutores — eles se tornam Pokémons que você pode capturar. 
+                          O campus vira o seu mapa, com vários pontos de interesse e desafios para enfrentar.
+                          Complete missões e conquiste pontos enquanto aprende sobre matérias, habilidades e conhecimentos diretamente de seus professores!
+                      </p>
+                  </div>
+                    <img src="/images/pikachu-header.png" alt="" />
+                </section>
                 <section className="cirol">
-                    <h1>Cirol</h1>
-                    <p>Cirol é um Pokémon do tipo Terra, conhecido por sua habilidade única de Lança-Esporos, que usa de forma estratégica para confundir adversários. Apesar de sua timidez, é um verdadeiro estrategista em batalhas, surpreendendo com táticas inteligentes e precisas.</p>
+                     <h1>Como Jogar</h1>
+                    <p>
+                        Para começar a jogar, tudo o que você precisa fazer é se cadastrar e fazer login na plataforma. 
+                        Após o login, você será transportado para o mapa do jogo, que é uma versão do campus onde os professores se tornam Pokémons.
+                        Durante o jogo, você pode explorar o campus, localizar Pokémons (que são seus professores) e capturá-los ao completar missões educativas. 
+                        A cada missão concluída, você ganha pontos e desbloqueia novas habilidades. O objetivo é capturar o maior número possível de Pokémons e conquistar o topo do ranking!
+                    </p>
+                    <img src="" alt="" />
                 </section>
            </main>
+
+            <footer>
+              <p>&copy; 2024 PokeGo - Todos os direitos reservados</p>
+           </footer>
         </>
     );
 }

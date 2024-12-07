@@ -49,3 +49,35 @@
 .capture-button:hover {
     background-color: #218838;
 }
+
+.capture-effect {
+    position: absolute;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 0, 0.8);
+    pointer-events: none;
+    animation: capture-animation 1.5s ease-out;
+    /* Duração aumentada */
+    transform: translate(-50%, -50%);
+    width: 80px;
+    /* Tamanho inicial maior */
+    height: 80px;
+    /* Tamanho inicial maior */
+}
+
+@keyframes capture-animation {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(5);
+        /* Escala final maior */
+    }
+}

@@ -25,7 +25,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-
 }
 
 .logo img {
@@ -77,4 +76,88 @@ body {
 
 .info_pokedex a {
     color: #fff;
+}
+
+.main_pokedex {
+    padding: 2rem 4rem;
+}
+
+.green {
+    background-color: #69b92f;
+}
+
+.brown {
+    background-color: #8b4513;
+}
+
+.blue {
+    background-color: #1e90ff;
+}
+
+.search-input {
+    padding: 15px;
+    /* Aumentar tamanho do input */
+    width: 400px;
+    /* Aumentar largura do input */
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    /* Aumentar espaçamento entre os cartões */
+    margin-top: 50px;
+    /* Aumentar espaçamento acima do grid */
+}
+
+.card {
+    background-color: #333;
+    padding: 40px;
+    /* Expandir padding interno dos cartões */
+    border-radius: 15px;
+    /* Ajustar borda */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Efeito de hover para expandir o cartão ao passar o mouse */
+}
+
+.card.green {
+    background-color: #69b92f;
+}
+
+.card.brown {
+    background-color: #8b4513;
+}
+
+.card.blue {
+    background-color: #1e90ff;
+}
+
+.image-placeholder {
+    width: 100px;
+    /* Aumentar tamanho do espaço reservado da imagem */
+    height: 100px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0 auto;
+}
+
+.name {
+    margin-top: 25px;
+    /* Aumentar espaço entre imagem e nome */
+    font-size: 22px;
+    /* Aumentar tamanho da fonte */
+}
+
+.power-level {
+    font-size: 16px;
+    /* Aumentar tamanho do texto de poder */
+    margin-top: 20px;
 }

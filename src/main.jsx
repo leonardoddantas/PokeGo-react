@@ -10,7 +10,6 @@ import Register from './containers/register/index.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import Profile from "./containers/profile/index.jsx";
 import Pokedex from "./containers/pokedex/index.jsx";
-import PokedexCapturado from "./containers/pokedexCapturado/index.jsx";
 
 const router = [
   {
@@ -40,10 +39,6 @@ const router = [
   {
     path: "/pokedex",
     element: < Pokedex/>,
-  },
-  {
-    path: "/pokedexcapturado",
-    element: < PokedexCapturado/>,
   },
 ];
 
