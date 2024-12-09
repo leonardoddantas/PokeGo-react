@@ -20,7 +20,7 @@ const router = [
     path: "/jogar",
     element: (
       <PrivateRoute>
-        <Map />  // Protege a página de "Jogar" com a PrivateRoute
+        <Map />
       </PrivateRoute>
     ),
   },

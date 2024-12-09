@@ -3,17 +3,6 @@ import api from "../../services/api";
 import "./style.css";
 
 function Pokedex() {
-    const cards = [
-        { id: 1, colorClass: "green" },
-        { id: 2, colorClass: "green" },
-        { id: 3, colorClass: "green" },
-        { id: 4, colorClass: "brown" },
-        { id: 5, colorClass: "brown" },
-        { id: 6, colorClass: "brown" },
-        { id: 7, colorClass: "blue" },
-        { id: 8, colorClass: "blue" },
-        { id: 9, colorClass: "blue" },
-    ];
   const [pokemons, setPokemons] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -46,16 +35,23 @@ function Pokedex() {
           </div>
         </div>
       </header>
-      <main className="main_pokedex">
-         <div className="card-grid">
-                {cards.map((card) => (
-                <div key={card.id} className={`card ${card.colorClass}`}>
-                    <div className="image-placeholder"></div>
-                    <h3 className="name">NOME</h3>
-                    <div className="power-level">#haspowerlevel<br />EGRTHKUETUYI</div>
+       <main className="main_pokedex">
+        <div className="card-grid">
+          {errorMessage ? (
+            <p className="error-message">{errorMessage}</p>
+          ) : (
+            pokemons.slice(0, 9).map((pokemon, index) => (
+              <div key={pokemon.id || index} className={`card ${index < 3 ? "green" : index < 6 ? "brown" : "blue"}`}>
+                  <img className="image-placeholder" src={`/images/${pokemon.name}.png`} alt={pokemon.name} />
+                <h3 className="name">{pokemon.name}</h3>
+                <div className="power-level">
+                  Tipo: {pokemon.type}<br />
+                  {pokemon.description}
                 </div>
-                ))}
-            </div>
+              </div>
+            ))
+          )}
+        </div>
       </main>
     </>
   );
